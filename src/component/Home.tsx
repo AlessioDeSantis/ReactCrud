@@ -37,12 +37,8 @@ const Home = () => {
     }
 
     const deleteEmployee = (data: IEmployee) => {
-
-        const indexToDelete = employeeList.indexOf(data)
-        const tempList = [...employeeList]
-
-        tempList.splice(indexToDelete, 1)
-        setEmployeeList(tempList);
+        const updatedList = employeeList.filter(employee => employee !== data);
+        setEmployeeList(updatedList);
     }
 
     const editDataEmployee = (data: IEmployee) => {
